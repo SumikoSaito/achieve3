@@ -9,18 +9,18 @@
 <body>
   <header>
     <ul>
-      <li><%= link_to 'トップ画面', tops_path %></li>
-      <li><%= link_to 'ブログ一覧', blogs_path %></li>
-      <li><%= link_to 'ブログ作成ページ', new_blog_path %></li>
+      <li><%= link_to image_tag("icon.png", :size => "40x40"), tops_path %></li>
+      <li><%= link_to image_tag("home.png", :size => "35x35"), blogs_path %></li>
+      <li><%= link_to 'Comment', new_blog_path, class: 'btn btn-info btn-sm'%></li>
     </ul>
   </header>
 
 <%= yield %>
 
   <footer>
-    <p>齋藤純子</p>
+    <p>Sumiko Saito</p>
     <p>© 2018 Copyright Sumiko Saito.</p>
   </footer>
-  
+
 </body>
 </html>

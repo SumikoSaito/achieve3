@@ -3,7 +3,7 @@
   <%= form_with(model: @blog, local: true) do |form| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
-      <h2>入力内容に問題があります。</h2>
+      <h2>You should not be happy with the content!</h2>
       <ul>
 
       <% @blog.errors.full_messages.each do |msg| %>
@@ -14,14 +14,10 @@
   <% end %>
 
   <div class="blog_content">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="blog_content">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-<%= form.submit %>
+<%= form.submit "Submit", class: 'btn btn-info'%>
 <% end %>
 </div>
 </div>

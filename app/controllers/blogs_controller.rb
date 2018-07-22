@@ -6,7 +6,11 @@ class BlogsController < ApplicationController
     end
 
     def new
+      if params[:back]
+        @blog = Blog.new(blog_params)
+      else
         @blog = Blog.new
+      end
     end
 
 
@@ -43,13 +47,13 @@ class BlogsController < ApplicationController
     end
 
     def confirm
-        @blog = Blog.new(blog_params)
+      @blog = Blog.new(blog_params)
+      render :new if @blog.invalid?
     end
-
 
     private
     def blog_params
-        params.require(:blog).permit(:title, :content)
+        params.require(:blog).permit(:content)
     end
 
     def set_blog
